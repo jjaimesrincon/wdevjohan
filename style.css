@@ -1,0 +1,113 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+nav,
+div#footer {
+  background: #1f1f1f;
+  display: flex;
+  color: #ffffff;
+  padding: 12px 12px 12px 40px;
+}
+
+nav div#logo {
+  font-family: "Lobster", sans-serif;
+  font-size: 30px;
+  width: 30%;
+}
+
+nav div#main-menu {
+  width: 70%;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+nav ul {
+  margin-top: 10px;
+}
+
+nav li {
+  list-style-type: none;
+  float: left;
+  margin-right: 50px;
+}
+
+nav ul li.current {
+  border-bottom: 1px solid #ffffff;
+}
+
+div#banner {
+  padding: 0;
+  min-width: 100%;
+  height: 90%;
+  background: url(images/restaurant-05.jpg) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  background-position: center;
+}
+
+div.title {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  text-align: center;
+}
+
+div.title h1 {
+  font-size: 4em;
+  color: white;
+  text-shadow: 1px 1px 10px #050608;
+}
+
+.flex {
+  display: flex; /* establish flex container */
+  flex-direction: row; /* make main axis horinzontal */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; /* center items horizontally, in this case */
+}
+
+div#container {
+  height: 550px;
+}
+
+.box {
+  width: 440px;
+  margin: 5px;
+  text-align: center; /* will center text in <p>, which is not a flex item */
+}
+
+.box:first-child {
+  margin-right: 60px;
+}
+
+div#container div.box h2 {
+  margin-bottom: 40px;
+}
+
+div#container div.box p {
+  font-size: 20px;
+  line-height: 35px;
+  text-align: justify;
+}
+
+div#container div.box p span {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.1em;
+}
+
+div#footer {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px gray;
+}
