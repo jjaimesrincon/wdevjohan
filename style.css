@@ -1,10 +1,88 @@
+/*
+  Project 4 Website Development & Deployment
+  Name: Johann Jaimes
+  Date: 2023-04-26
+  Free images taken from https://unsplash.com
+*/
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 nav,
-div#footer {
+div#footer,
+div#copy {
   background: #1f1f1f;
   display: flex;
   color: #ffffff;
@@ -35,7 +113,8 @@ nav ul {
   margin-top: 10px;
 }
 
-nav li {
+nav li,
+div#footer ul li {
   list-style-type: none;
   float: left;
   margin-right: 50px;
@@ -75,20 +154,25 @@ div.title h1 {
   flex-direction: row; /* make main axis horinzontal */
   justify-content: center; /* center items vertically, in this case */
   align-items: center; /* center items horizontally, in this case */
-}
-
-div#container {
-  height: 550px;
+  flex-wrap: wrap;
 }
 
 .box {
-  width: 440px;
-  margin: 5px;
+  margin: 0 10px;
   text-align: center; /* will center text in <p>, which is not a flex item */
 }
 
-.box:first-child {
-  margin-right: 60px;
+div#container {
+  margin: 20px 0;
+}
+
+div#container .box {
+  width: 400px;
+  margin-right: 20px;
+}
+
+div#container .box:last-child {
+  margin-right: 0;
 }
 
 div#container div.box h2 {
@@ -110,4 +194,167 @@ div#container div.box p span {
 div#footer {
   font-weight: bold;
   text-shadow: 1px 1px 2px gray;
+}
+
+div#footer ul.social-media {
+  list-style-type: none;
+}
+
+div#footer ul.social-media li {
+  float: left;
+  height: 40px;
+  width: 40px;
+  margin-right: 4px;
+}
+
+div#footer ul.social-media li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-size: cover !important;
+  line-height: 500px;
+  overflow: hidden;
+}
+
+div#footer ul.social-media li.facebook a {
+  background: url("images/facebook-logo.png") no-repeat scroll 0 0;
+}
+
+div#footer ul.social-media li.twitter a {
+  background: url("images/twitter-logo.png") no-repeat scroll 0 0;
+}
+div#footer ul.social-media li.instagram a {
+  background: url("images/instagram-logo.png") no-repeat scroll -40px 0;
+}
+div#footer ul.social-media li.tiktok a {
+  background: url("images/tiktok-logo.png") no-repeat scroll 0 0;
+}
+
+div#footer ul.social-media li.facebook a:hover {
+  background: url("images/facebook-logo.png") no-repeat scroll -40px 0;
+}
+
+div#footer ul.social-media li.twitter a:hover {
+  background: url("images/twitter-logo.png") no-repeat scroll -40px 0;
+}
+div#footer ul.social-media li.instagram a:hover {
+  background: url("images/instagram-logo.png") no-repeat scroll 0 0;
+}
+div#footer ul.social-media li.tiktok a:hover {
+  background: url("images/tiktok-logo.png") no-repeat scroll -40px 0;
+}
+
+div#footer a,
+div#footer a:visited {
+  text-shadow: none;
+  text-decoration: none;
+  font-weight: normal;
+  color: white;
+}
+
+div#article div.box {
+  width: 300px;
+}
+
+div#article {
+  margin: 50px 0;
+}
+
+form#contact-form form {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  width: 50%;
+}
+
+form#contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+form#contact-form input[type="text"],
+input[type="tel"],
+form#contact-form input[type="email"],
+form#contact-form textarea {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form#contact-form textarea {
+  resize: none;
+}
+
+form#contact-form input[type="submit"],
+form#contact-form input[type="reset"] {
+  background-color: #2f6d31;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form#contact-form input[type="reset"] {
+  background-color: #ffffff;
+  border: 1px solid #639b6c;
+  color: #000000;
+}
+
+form#contact-form input[type="submit"]:hover,
+form#contact-form input[type="reset"]:hover {
+  background-color: #3e8e41;
+}
+
+form#contact-form input[type="reset"]:hover {
+  color: #ffffff;
+}
+
+form#contact-form input[type="submit"]:active,
+form#contact-form input[type="reset"]:active {
+  background-color: #1e522d;
+}
+
+span.error {
+  color: red;
+  display: block;
+}
+
+#message-sent {
+  display: none;
+  background: #a2dba4;
+  color: #285c2a;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 1105px) {
+  nav div#logo span,
+  nav ul li:not(.current) {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .box {
+    margin: 10px 0;
+  }
+
+  nav div#logo span,
+  nav ul li:not(.current) {
+    display: none;
+  }
 }

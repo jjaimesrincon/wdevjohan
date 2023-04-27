@@ -23,29 +23,54 @@
       <div id="logo">Mediterranean <span>Restaurant</span></div>
       <div id="main-menu">
         <ul>
-          <li class="current"><a href="#">Welcome</a></li>
+          <li><a href="index.html">Welcome</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="#">Reservations</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="current"><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <div id="banner">
-      <div class="title"><h1>Fresh. Healthy. Beautiful Food</h1></div>
-    </div>
-    <div id="container" class="flex">
+    <div class="flex">
       <div class="box">
-        <h2>Attention Pasta Lovers!</h2>
-        <p>
-          For a limited time, when you buy any of our delectable pasta dishes,
-          you'll receive a <span>free glass of wine</span>. Our pasta dishes are
-          made with only the freshest ingredients and cooked to perfection,
-          ensuring that every bite is bursting with flavor.
-        </p>
-      </div>
-      <div class="box">
-        <img src="images/pasta_wine_promotion_01.jpg" alt="Pasta and Wine" />
+        <form id="contact-form">
+          <label for="name">Name:</label>
+          <span id="name_error" class="error">Please provide a Name</span>
+          <span id="name_format_error" class="error"
+            >Please provide a valid Name</span
+          >
+          <input type="text" id="name" name="name" />
+
+          <label for="phone">Phone number:</label>
+          <span id="phone_error" class="error"
+            >Please provide a phone number</span
+          >
+          <span id="phone_format_error" class="error"
+            >Please provide a valid phone number</span
+          >
+          <input type="tel" id="phone" name="phone" />
+
+          <label for="email">Email:</label>
+          <span id="email_error" class="error">Please provide an email</span>
+          <span id="email_format_error" class="error"
+            >Please provide a valid email</span
+          >
+          <input type="email" id="email" name="email" />
+
+          <label for="comments">Comments:</label>
+          <span id="comments_error" class="error"
+            >Please provide some comments</span
+          >
+          <textarea id="comments" name="comments" rows="4" cols="50"></textarea
+          ><br />
+
+          <input type="reset" value="Reset" />
+          <input type="submit" value="Submit" />
+        </form>
+        <div id="message-sent">
+          Your message have being sent. Our personnel will be in touch with you
+          soon.
+        </div>
       </div>
     </div>
     <div id="footer" class="flex">
